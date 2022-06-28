@@ -1,0 +1,20 @@
+{
+  "name": "fileuploader",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app"
+  },
+  "author": "timleungtech",
+  "dependencies": {
+    "bootstrap": "^4.2.1",
+    "dropzone": "^5.5.1",
+    "express": "^4.16.4",
+    "multer": "^1.4.1",
+    "pug": "^2.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.9"
+  }
+}
