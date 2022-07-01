@@ -26,7 +26,8 @@ const storage = multer.diskStorage({
         cb(null, './uploads');
     },
     filename: (req, file, cb) => {
-        cb(null, file.originalname.replace(/\.[^/.]+$/, "") + '-' + MyDateString + '-' + Date.now() + path.extname(file.originalname));
+        // cb(null, file.originalname.replace(/\.[^/.]+$/, "") + '-' + MyDateString + '-' + Date.now() + path.extname(file.originalname));
+        cb(null, file.originalname.replace(/\.[^/.]+$/, "") + path.extname(file.originalname));
     }
 });
 
@@ -38,7 +39,8 @@ const upload = multer({
         files:10
     },
     fileFilter: function (req, file, cb) {
-        const fileTypes = /jpeg|jpg|png|pdf/;
+        // const fileTypes = /jpeg|jpg|png|pdf/;
+        const fileTypes = /pdf/;
         const extname = fileTypes.test(path.extname(file.originalname).toLowerCase());
         const mimeType = fileTypes.test(file.mimetype);
 
